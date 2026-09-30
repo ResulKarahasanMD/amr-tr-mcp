@@ -1,0 +1,1959 @@
+{
+ "schema": 1,
+ "generated": "2026-09-27",
+ "sources": {
+  "uamds": {
+   "title": "Ulusal Antimikrobiyal Direnç Sürveyans (UAMDS) Ağı Yıllık Raporu",
+   "publisher": "T.C. Sağlık Bakanlığı HSGM",
+   "published": "Ocak 2026",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/mikrobiyoloji-referans-laboratuvarlari-ve-biyolojik-urunler-db/Dokumanlar/Raporlar/UAMDS_Raporu_2024_verileri.pdf",
+   "local_pdf": false,
+   "sha256": "595cdd893f81de712bf974cce151cfd27735094aed49ed94b425266fec37e635",
+   "bytes": 935212,
+   "pages": 17,
+   "parser": "pypdf 6.19.0"
+  },
+  "who": {
+   "title": "WHO Global Health Observatory (SDG 3.d.2)",
+   "url": "https://ghoapi.azureedge.net/api/",
+   "retrieved": "2026-09-27",
+   "error": null
+  }
+ },
+ "scope": {
+  "specimens": [
+   "kan",
+   "BOS"
+  ],
+  "level": "ulusal (sentinel)",
+  "standard": "EUCAST",
+  "dedup": "hasta başına ilk izolat",
+  "provinces": 36,
+  "labs": 60,
+  "isolates_submitted": 34057,
+  "isolates_analyzed": 27671,
+  "icu_share_pct": 49.6
+ },
+ "pathogens": {
+  "E. coli": {
+   "table": 3,
+   "page": 12,
+   "year": 2024,
+   "groups": {
+    "Aminopenisilinler": [
+     "amoksisilin",
+     "ampisilin"
+    ],
+    "Üçüncü kuşak sefalosporinler": [
+     "sefotaksim",
+     "seftriakson",
+     "seftazidim"
+    ],
+    "Aminoglikozid": [
+     "gentamisin",
+     "tobramisin"
+    ],
+    "Florokinolon": [
+     "siprofloksasin",
+     "ofloksasin",
+     "levofloksasin"
+    ],
+    "Karbapenem": [
+     "imipenem",
+     "meropenem"
+    ]
+   },
+   "mdr_definition": "Çoklu ilaç direnci, fluorokinolonlara, 3. kuşak sefalosporinlere ve aminoglikozidlere eşzamanlı dirençli olması olarak tanımlanmıştır.",
+   "footnote": "Kolistin için sadece sıvı mikrodilüsyon yöntemi ile çalışılmış sonuçlar dahil edilmiştir.",
+   "n": 5945,
+   "icu_pct": 29
+  },
+  "K. pneumoniae": {
+   "table": 4,
+   "page": 13,
+   "year": 2024,
+   "groups": {
+    "Üçüncü kuşak sefalosporinler": [
+     "sefotaksim",
+     "seftriakson",
+     "seftazidim"
+    ],
+    "Aminoglikozid": [
+     "gentamisin",
+     "tobramisin"
+    ],
+    "Florokinolon": [
+     "siprofloksasin",
+     "ofloksasin",
+     "levofloksasin"
+    ],
+    "Karbapenem": [
+     "imipenem",
+     "meropenem"
+    ]
+   },
+   "mdr_definition": "Çoklu ilaç direnci, fluorokinolonlara, 3. kuşak sefalosporinlere ve aminoglikozidlere eşzamanlı dirençli olması olarak tanımlanmıştır.",
+   "footnote": "Kolistin için sadece sıvı mikrodilüsyon yöntemi ile çalışılmış sonuçlar dahil edilmiştir.",
+   "n": 6578,
+   "icu_pct": 60
+  },
+  "P. aeruginosa": {
+   "table": 5,
+   "page": 13,
+   "year": 2024,
+   "groups": {
+    "Florokinolon": [
+     "siprofloksasin",
+     "levofloksasin"
+    ],
+    "Karbapenem": [
+     "imipenem",
+     "meropenem"
+    ]
+   },
+   "mdr_definition": "Çoklu ilaç direnci; piperasilin-tazobaktam, seftazidim, karbapenemler, florokinolonlar ve aminoglikozid gruplarından 3 veya daha fazla gruba eşzamanlı olarak dirençli olmasıdır.",
+   "footnote": "Kolistin için sadece sıvı mikrodilüsyon yöntemi ile çalışılmış sonuçlar dahil edilmiştir.",
+   "n": 2168,
+   "icu_pct": 57
+  },
+  "Acinetobacter spp.": {
+   "table": 6,
+   "page": 14,
+   "year": 2024,
+   "groups": {
+    "Aminoglikozid": [
+     "gentamisin",
+     "tobramisin"
+    ],
+    "Florokinolon": [
+     "siprofloksasin",
+     "levofloksasin"
+    ],
+    "Karbapenem": [
+     "imipenem",
+     "meropenem"
+    ]
+   },
+   "mdr_definition": "Çoklu ilaç direnci, karbapenemlere, florokinolonlara ve aminoglikozidlere eşzamanlı dirençli olması olarak tanımlanmıştır.",
+   "footnote": "Kolistin için sadece sıvı mikrodilüsyon yöntemi ile çalışılmış sonuçlar dahil edilmiştir.",
+   "n": 2594,
+   "icu_pct": 76
+  },
+  "S. aureus": {
+   "table": 7,
+   "page": 14,
+   "year": 2024,
+   "groups": {},
+   "mdr_definition": null,
+   "footnote": "Metisilin-dirençli S. aureus’un belirlenmesinde sefoksitin test sonuçları (yok ise Oksasilin) kullanılmıştır.",
+   "n": 4455,
+   "icu_pct": 33
+  },
+  "S. pneumoniae": {
+   "table": 8,
+   "page": 15,
+   "year": 2024,
+   "groups": {
+    "Makrolid": [
+     "eritromisin",
+     "klaritromisin",
+     "azitromisin"
+    ]
+   },
+   "mdr_definition": "Çoklu ilaç direnci, makrolidlere dirençli ve penisilin non-wild-type olan izolatlar olarak tanımlanmıştır.",
+   "footnote": "Penisilin sonuçları belirlenmesinde penisilin MİK test sonuçları (mevcut değil ise Oksasilin) kullanılmıştır. S. pneumoniae için Penisilin non-wild-type tanımı laboratuvarlar tarafından penisiline karşı duyarlı-yüksek dozda (I) veya dirençli (R) olarak bildirilen S. pneumoniae izolatlarını ifade etmektedir. Bu, penisiline karşı MİK değerlerinin >0,06 mg/L olduğu varsayımına dayanmaktadır.",
+   "n": 262,
+   "icu_pct": 22
+  },
+  "E. faecalis": {
+   "table": 9,
+   "page": 15,
+   "year": 2024,
+   "groups": {},
+   "mdr_definition": null,
+   "footnote": null,
+   "n": 2837,
+   "icu_pct": 56
+  },
+  "E. faecium": {
+   "table": 10,
+   "page": 15,
+   "year": 2024,
+   "groups": {},
+   "mdr_definition": null,
+   "footnote": null,
+   "n": 2832,
+   "icu_pct": 61
+  }
+ },
+ "rows": [
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Aminopenisilinler",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 5629,
+   "r_pct": 81
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "3. kuşak sefalosporinler",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 5916,
+   "r_pct": 61
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Karbapenemler",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 5940,
+   "r_pct": 4
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Ertapenem",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 5661,
+   "r_pct": 9
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Piperasilin-tazobaktam",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 5676,
+   "r_pct": 24
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Florokinolonlar",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 5431,
+   "r_pct": 52
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Aminoglikozidler",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 2896,
+   "r_pct": 22
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Amikasin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 5840,
+   "r_pct": 4
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Çoklu ilaç direnci",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 2852,
+   "r_pct": 16
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "Kolistin",
+   "footnoted": true,
+   "low_coverage": true,
+   "n": 1050,
+   "r_pct": 2
+  },
+  {
+   "pathogen": "E. coli",
+   "year": 2024,
+   "table": 3,
+   "page": 12,
+   "antibiotic": "GSBL",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 4789,
+   "r_pct": 58
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "3. kuşak sefalosporinler",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 6566,
+   "r_pct": 81
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Karbapenemler",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 6429,
+   "r_pct": 59
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Ertapenem",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 6267,
+   "r_pct": 64
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Piperasilin-tazobaktam",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 6317,
+   "r_pct": 75
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Florokinolonlar",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 6231,
+   "r_pct": 73
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Aminoglikozidler",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 3477,
+   "r_pct": 48
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Amikasin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 6277,
+   "r_pct": 39
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Çoklu ilaç direnci",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 3466,
+   "r_pct": 43
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "Kolistin",
+   "footnoted": true,
+   "low_coverage": true,
+   "n": 2439,
+   "r_pct": 34
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "year": 2024,
+   "table": 4,
+   "page": 13,
+   "antibiotic": "GSBL",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 4706,
+   "r_pct": 65
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Piperasilin-tazobaktam",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2137,
+   "r_pct": 40,
+   "i_pct": 60
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Seftazidim",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2151,
+   "r_pct": 36,
+   "i_pct": 64
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Sefepim",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2087,
+   "r_pct": 35,
+   "i_pct": 65
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "İmipenem",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 1990,
+   "r_pct": 40,
+   "i_pct": 60
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Meropenem",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2042,
+   "r_pct": 31,
+   "i_pct": 11
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Florokinolonlar",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2148,
+   "r_pct": 35,
+   "i_pct": 65
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Tobramisin",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 752,
+   "r_pct": 21,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Amikasin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2110,
+   "r_pct": 16,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Kolistin",
+   "footnoted": true,
+   "low_coverage": true,
+   "n": 655,
+   "r_pct": 5,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "year": 2024,
+   "table": 5,
+   "page": 13,
+   "antibiotic": "Çoklu ilaç direnci",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 726,
+   "r_pct": 33,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "year": 2024,
+   "table": 6,
+   "page": 14,
+   "antibiotic": "Karbapenemler",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2584,
+   "r_pct": 90
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "year": 2024,
+   "table": 6,
+   "page": 14,
+   "antibiotic": "Florokinolonlar",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2552,
+   "r_pct": 90
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "year": 2024,
+   "table": 6,
+   "page": 14,
+   "antibiotic": "Aminoglikozidler",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 1426,
+   "r_pct": 82
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "year": 2024,
+   "table": 6,
+   "page": 14,
+   "antibiotic": "Amikasin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2556,
+   "r_pct": 84
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "year": 2024,
+   "table": 6,
+   "page": 14,
+   "antibiotic": "Kolistin",
+   "footnoted": true,
+   "low_coverage": true,
+   "n": 1256,
+   "r_pct": 11
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "year": 2024,
+   "table": 6,
+   "page": 14,
+   "antibiotic": "Çoklu ilaç direnci",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 1414,
+   "r_pct": 80
+  },
+  {
+   "pathogen": "S. aureus",
+   "year": 2024,
+   "table": 7,
+   "page": 14,
+   "antibiotic": "MRSA",
+   "footnoted": true,
+   "low_coverage": false,
+   "n": 4371,
+   "r_pct": 35,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "S. aureus",
+   "year": 2024,
+   "table": 7,
+   "page": 14,
+   "antibiotic": "Siprofloksasin/Levofloksasin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 4404,
+   "r_pct": 14,
+   "i_pct": 86
+  },
+  {
+   "pathogen": "S. aureus",
+   "year": 2024,
+   "table": 7,
+   "page": 14,
+   "antibiotic": "Vankomisin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 4425,
+   "r_pct": 0,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "S. aureus",
+   "year": 2024,
+   "table": 7,
+   "page": 14,
+   "antibiotic": "Linezolid",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 4450,
+   "r_pct": 0,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "S. aureus",
+   "year": 2024,
+   "table": 7,
+   "page": 14,
+   "antibiotic": "Rifampisin",
+   "footnoted": false,
+   "low_coverage": true,
+   "n": 1529,
+   "r_pct": 10,
+   "i_pct": 0
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "year": 2024,
+   "table": 8,
+   "page": 15,
+   "antibiotic": "Penisilin (non-wild-type)",
+   "footnoted": true,
+   "low_coverage": false,
+   "n": 247,
+   "r_pct": null,
+   "i_pct": null,
+   "ir_pct": 61
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "year": 2024,
+   "table": 8,
+   "page": 15,
+   "antibiotic": "Sefotaksim/Seftriakson",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 249,
+   "r_pct": 3,
+   "i_pct": 25,
+   "ir_pct": null
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "year": 2024,
+   "table": 8,
+   "page": 15,
+   "antibiotic": "Levofloksasin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 226,
+   "r_pct": 2,
+   "i_pct": 97,
+   "ir_pct": null
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "year": 2024,
+   "table": 8,
+   "page": 15,
+   "antibiotic": "Makrolidler",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 221,
+   "r_pct": 45,
+   "i_pct": 0,
+   "ir_pct": null
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "year": 2024,
+   "table": 8,
+   "page": 15,
+   "antibiotic": "Çoklu ilaç direnci",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 208,
+   "r_pct": null,
+   "i_pct": null,
+   "ir_pct": 41
+  },
+  {
+   "pathogen": "E. faecalis",
+   "year": 2024,
+   "table": 9,
+   "page": 15,
+   "antibiotic": "Ampisilin/Amoksisilin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2778,
+   "r_pct": 1
+  },
+  {
+   "pathogen": "E. faecalis",
+   "year": 2024,
+   "table": 9,
+   "page": 15,
+   "antibiotic": "Vankomisin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2822,
+   "r_pct": 1
+  },
+  {
+   "pathogen": "E. faecalis",
+   "year": 2024,
+   "table": 9,
+   "page": 15,
+   "antibiotic": "Linezolid",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2832,
+   "r_pct": 0
+  },
+  {
+   "pathogen": "E. faecalis",
+   "year": 2024,
+   "table": 9,
+   "page": 15,
+   "antibiotic": "Yüksek-düzey gentamisin direnci",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2759,
+   "r_pct": 31
+  },
+  {
+   "pathogen": "E. faecium",
+   "year": 2024,
+   "table": 10,
+   "page": 15,
+   "antibiotic": "Ampisilin/Amoksisilin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2775,
+   "r_pct": 94
+  },
+  {
+   "pathogen": "E. faecium",
+   "year": 2024,
+   "table": 10,
+   "page": 15,
+   "antibiotic": "Yüksek Düzey Gentamisin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2727,
+   "r_pct": 65
+  },
+  {
+   "pathogen": "E. faecium",
+   "year": 2024,
+   "table": 10,
+   "page": 15,
+   "antibiotic": "Linezolid",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2825,
+   "r_pct": 0
+  },
+  {
+   "pathogen": "E. faecium",
+   "year": 2024,
+   "table": 10,
+   "page": 15,
+   "antibiotic": "Vankomisin",
+   "footnoted": false,
+   "low_coverage": false,
+   "n": 2827,
+   "r_pct": 15
+  }
+ ],
+ "trend": [
+  {
+   "pathogen": "E. coli",
+   "antibiotic": "Aminopenisilinler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 3561,
+     "r_pct": 76
+    },
+    {
+     "year": 2021,
+     "n": 4346,
+     "r_pct": 75
+    },
+    {
+     "year": 2022,
+     "n": 4707,
+     "r_pct": 77
+    },
+    {
+     "year": 2023,
+     "n": 5893,
+     "r_pct": 80
+    },
+    {
+     "year": 2024,
+     "n": 5629,
+     "r_pct": 81
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "E. coli",
+   "antibiotic": "3. kuşak sefalosporinler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4340,
+     "r_pct": 53
+    },
+    {
+     "year": 2021,
+     "n": 4827,
+     "r_pct": 50
+    },
+    {
+     "year": 2022,
+     "n": 4822,
+     "r_pct": 53
+    },
+    {
+     "year": 2023,
+     "n": 5988,
+     "r_pct": 59
+    },
+    {
+     "year": 2024,
+     "n": 5916,
+     "r_pct": 61
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "E. coli",
+   "antibiotic": "Karbapenemler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4345,
+     "r_pct": 4
+    },
+    {
+     "year": 2021,
+     "n": 4523,
+     "r_pct": 5
+    },
+    {
+     "year": 2022,
+     "n": 4728,
+     "r_pct": 3
+    },
+    {
+     "year": 2023,
+     "n": 5992,
+     "r_pct": 4
+    },
+    {
+     "year": 2024,
+     "n": 5940,
+     "r_pct": 4
+    }
+   ],
+   "change": "-",
+   "change_text": "anlamlı eğilim yok",
+   "verified": true
+  },
+  {
+   "pathogen": "E. coli",
+   "antibiotic": "Florokinolonlar",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4191,
+     "r_pct": 50
+    },
+    {
+     "year": 2021,
+     "n": 4683,
+     "r_pct": 51
+    },
+    {
+     "year": 2022,
+     "n": 4797,
+     "r_pct": 50
+    },
+    {
+     "year": 2023,
+     "n": 5480,
+     "r_pct": 52
+    },
+    {
+     "year": 2024,
+     "n": 5431,
+     "r_pct": 52
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "E. coli",
+   "antibiotic": "Aminoglikozidler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4209,
+     "r_pct": 24
+    },
+    {
+     "year": 2021,
+     "n": 4540,
+     "r_pct": 25
+    },
+    {
+     "year": 2022,
+     "n": 4282,
+     "r_pct": 22
+    },
+    {
+     "year": 2023,
+     "n": 2591,
+     "r_pct": 21
+    },
+    {
+     "year": 2024,
+     "n": 2896,
+     "r_pct": 22
+    }
+   ],
+   "change": "↓",
+   "change_text": "azalış",
+   "verified": true
+  },
+  {
+   "pathogen": "E. coli",
+   "antibiotic": "Çoklu ilaç direnci",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4076,
+     "r_pct": 17
+    },
+    {
+     "year": 2021,
+     "n": 4370,
+     "r_pct": 16
+    },
+    {
+     "year": 2022,
+     "n": 4228,
+     "r_pct": 15
+    },
+    {
+     "year": 2023,
+     "n": 2521,
+     "r_pct": 15
+    },
+    {
+     "year": 2024,
+     "n": 2852,
+     "r_pct": 16
+    }
+   ],
+   "change": "-",
+   "change_text": "anlamlı eğilim yok",
+   "verified": true
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "antibiotic": "3. kuşak sefalosporinler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4499,
+     "r_pct": 77
+    },
+    {
+     "year": 2021,
+     "n": 4697,
+     "r_pct": 75
+    },
+    {
+     "year": 2022,
+     "n": 4822,
+     "r_pct": 78
+    },
+    {
+     "year": 2023,
+     "n": 6204,
+     "r_pct": 80
+    },
+    {
+     "year": 2024,
+     "n": 6566,
+     "r_pct": 81
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "antibiotic": "Karbapenemler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4515,
+     "r_pct": 48
+    },
+    {
+     "year": 2021,
+     "n": 4379,
+     "r_pct": 49
+    },
+    {
+     "year": 2022,
+     "n": 4697,
+     "r_pct": 52
+    },
+    {
+     "year": 2023,
+     "n": 6208,
+     "r_pct": 55
+    },
+    {
+     "year": 2024,
+     "n": 6429,
+     "r_pct": 59
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "antibiotic": "Florokinolonlar",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4274,
+     "r_pct": 69
+    },
+    {
+     "year": 2021,
+     "n": 4437,
+     "r_pct": 68
+    },
+    {
+     "year": 2022,
+     "n": 4786,
+     "r_pct": 69
+    },
+    {
+     "year": 2023,
+     "n": 5656,
+     "r_pct": 71
+    },
+    {
+     "year": 2024,
+     "n": 6231,
+     "r_pct": 73
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "antibiotic": "Aminoglikozidler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4403,
+     "r_pct": 47
+    },
+    {
+     "year": 2021,
+     "n": 4441,
+     "r_pct": 43
+    },
+    {
+     "year": 2022,
+     "n": 4150,
+     "r_pct": 43
+    },
+    {
+     "year": 2023,
+     "n": 2774,
+     "r_pct": 41
+    },
+    {
+     "year": 2024,
+     "n": 3477,
+     "r_pct": 48
+    }
+   ],
+   "change": "-",
+   "change_text": "anlamlı eğilim yok",
+   "verified": true
+  },
+  {
+   "pathogen": "K. pneumoniae",
+   "antibiotic": "Çoklu ilaç direnci",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 4154,
+     "r_pct": 43
+    },
+    {
+     "year": 2021,
+     "n": 4162,
+     "r_pct": 39
+    },
+    {
+     "year": 2022,
+     "n": 4099,
+     "r_pct": 38
+    },
+    {
+     "year": 2023,
+     "n": 2746,
+     "r_pct": 35
+    },
+    {
+     "year": 2024,
+     "n": 3466,
+     "r_pct": 43
+    }
+   ],
+   "change": "↓",
+   "change_text": "azalış",
+   "verified": true
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "antibiotic": "Piperasilin-tazobaktam",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 1365,
+     "r_pct": 32
+    },
+    {
+     "year": 2021,
+     "n": 1744,
+     "r_pct": 32
+    },
+    {
+     "year": 2022,
+     "n": 1609,
+     "r_pct": 35
+    },
+    {
+     "year": 2023,
+     "n": 1920,
+     "r_pct": 41
+    },
+    {
+     "year": 2024,
+     "n": 2137,
+     "r_pct": 40
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "antibiotic": "Seftazidim",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 1468,
+     "r_pct": 27
+    },
+    {
+     "year": 2021,
+     "n": 1702,
+     "r_pct": 28
+    },
+    {
+     "year": 2022,
+     "n": 1600,
+     "r_pct": 27
+    },
+    {
+     "year": 2023,
+     "n": 1967,
+     "r_pct": 34
+    },
+    {
+     "year": 2024,
+     "n": 2151,
+     "r_pct": 36
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "antibiotic": "Karbapenemler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 1547,
+     "r_pct": 36
+    },
+    {
+     "year": 2021,
+     "n": 1700,
+     "r_pct": 39
+    },
+    {
+     "year": 2022,
+     "n": 1671,
+     "r_pct": 36
+    },
+    {
+     "year": 2023,
+     "n": 1985,
+     "r_pct": 41
+    },
+    {
+     "year": 2024,
+     "n": 2125,
+     "r_pct": 42
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": false
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "antibiotic": "Florokinolonlar",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 1503,
+     "r_pct": 31
+    },
+    {
+     "year": 2021,
+     "n": 1716,
+     "r_pct": 33
+    },
+    {
+     "year": 2022,
+     "n": 1662,
+     "r_pct": 30
+    },
+    {
+     "year": 2023,
+     "n": 1975,
+     "r_pct": 34
+    },
+    {
+     "year": 2024,
+     "n": 2148,
+     "r_pct": 35
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "P. aeruginosa",
+   "antibiotic": "Çoklu ilaç direnci",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 672,
+     "r_pct": 28
+    },
+    {
+     "year": 2021,
+     "n": 941,
+     "r_pct": 28
+    },
+    {
+     "year": 2022,
+     "n": 971,
+     "r_pct": 26
+    },
+    {
+     "year": 2023,
+     "n": 676,
+     "r_pct": 33
+    },
+    {
+     "year": 2024,
+     "n": 726,
+     "r_pct": 33
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "antibiotic": "Karbapenemler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 3162,
+     "r_pct": 93
+    },
+    {
+     "year": 2021,
+     "n": 3258,
+     "r_pct": 93
+    },
+    {
+     "year": 2022,
+     "n": 2703,
+     "r_pct": 91
+    },
+    {
+     "year": 2023,
+     "n": 3042,
+     "r_pct": 91
+    },
+    {
+     "year": 2024,
+     "n": 2584,
+     "r_pct": 90
+    }
+   ],
+   "change": "↓",
+   "change_text": "azalış",
+   "verified": true
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "antibiotic": "Florokinolonlar",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 3061,
+     "r_pct": 94
+    },
+    {
+     "year": 2021,
+     "n": 3210,
+     "r_pct": 95
+    },
+    {
+     "year": 2022,
+     "n": 2683,
+     "r_pct": 91
+    },
+    {
+     "year": 2023,
+     "n": 3018,
+     "r_pct": 91
+    },
+    {
+     "year": 2024,
+     "n": 2552,
+     "r_pct": 90
+    }
+   ],
+   "change": "↓",
+   "change_text": "azalış",
+   "verified": true
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "antibiotic": "Aminoglikozidler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 3114,
+     "r_pct": 86
+    },
+    {
+     "year": 2021,
+     "n": 3381,
+     "r_pct": 85
+    },
+    {
+     "year": 2022,
+     "n": 2426,
+     "r_pct": 83
+    },
+    {
+     "year": 2023,
+     "n": 1558,
+     "r_pct": 87
+    },
+    {
+     "year": 2024,
+     "n": 1426,
+     "r_pct": 82
+    }
+   ],
+   "change": "↓",
+   "change_text": "azalış",
+   "verified": true
+  },
+  {
+   "pathogen": "Acinetobacter spp.",
+   "antibiotic": "Çoklu ilaç direnci",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 3036,
+     "r_pct": 85
+    },
+    {
+     "year": 2021,
+     "n": 3067,
+     "r_pct": 85
+    },
+    {
+     "year": 2022,
+     "n": 2404,
+     "r_pct": 82
+    },
+    {
+     "year": 2023,
+     "n": 1536,
+     "r_pct": 86
+    },
+    {
+     "year": 2024,
+     "n": 1414,
+     "r_pct": 80
+    }
+   ],
+   "change": "↓",
+   "change_text": "azalış",
+   "verified": true
+  },
+  {
+   "pathogen": "S. aureus",
+   "antibiotic": "MRSA",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 3589,
+     "r_pct": 33
+    },
+    {
+     "year": 2021,
+     "n": 3543,
+     "r_pct": 31
+    },
+    {
+     "year": 2022,
+     "n": 3516,
+     "r_pct": 31
+    },
+    {
+     "year": 2023,
+     "n": 4249,
+     "r_pct": 31
+    },
+    {
+     "year": 2024,
+     "n": 4371,
+     "r_pct": 35
+    }
+   ],
+   "change": "-",
+   "change_text": "anlamlı eğilim yok",
+   "verified": true
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "antibiotic": "Penisilin (non-wild-type)",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 126,
+     "r_pct": 55
+    },
+    {
+     "year": 2021,
+     "n": 147,
+     "r_pct": 54
+    },
+    {
+     "year": 2022,
+     "n": 251,
+     "r_pct": 51
+    },
+    {
+     "year": 2023,
+     "n": 250,
+     "r_pct": 59
+    },
+    {
+     "year": 2024,
+     "n": 247,
+     "r_pct": 61
+    }
+   ],
+   "change": "-",
+   "change_text": "anlamlı eğilim yok",
+   "verified": true
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "antibiotic": "Makrolidler",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 117,
+     "r_pct": 34
+    },
+    {
+     "year": 2021,
+     "n": 126,
+     "r_pct": 34
+    },
+    {
+     "year": 2022,
+     "n": 227,
+     "r_pct": 43
+    },
+    {
+     "year": 2023,
+     "n": 232,
+     "r_pct": 44
+    },
+    {
+     "year": 2024,
+     "n": 221,
+     "r_pct": 45
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "S. pneumoniae",
+   "antibiotic": "Çoklu ilaç direnci",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 115,
+     "r_pct": 28
+    },
+    {
+     "year": 2021,
+     "n": 123,
+     "r_pct": 26
+    },
+    {
+     "year": 2022,
+     "n": 218,
+     "r_pct": 33
+    },
+    {
+     "year": 2023,
+     "n": 227,
+     "r_pct": 42
+    },
+    {
+     "year": 2024,
+     "n": 208,
+     "r_pct": 41
+    }
+   ],
+   "change": "↑",
+   "change_text": "artış",
+   "verified": true
+  },
+  {
+   "pathogen": "E. faecalis",
+   "antibiotic": "Yüksek-düzey gentamisin direnci",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 2040,
+     "r_pct": 30
+    },
+    {
+     "year": 2021,
+     "n": 1891,
+     "r_pct": 25
+    },
+    {
+     "year": 2022,
+     "n": 1849,
+     "r_pct": 27
+    },
+    {
+     "year": 2023,
+     "n": 3001,
+     "r_pct": 26
+    },
+    {
+     "year": 2024,
+     "n": 2759,
+     "r_pct": 31
+    }
+   ],
+   "change": "-",
+   "change_text": "anlamlı eğilim yok",
+   "verified": true
+  },
+  {
+   "pathogen": "E. faecium",
+   "antibiotic": "Vankomisin",
+   "table": 11,
+   "page": 16,
+   "series": [
+    {
+     "year": 2020,
+     "n": 2200,
+     "r_pct": 15
+    },
+    {
+     "year": 2021,
+     "n": 2228,
+     "r_pct": 16
+    },
+    {
+     "year": 2022,
+     "n": 2444,
+     "r_pct": 16
+    },
+    {
+     "year": 2023,
+     "n": 2911,
+     "r_pct": 16
+    },
+    {
+     "year": 2024,
+     "n": 2827,
+     "r_pct": 15
+    }
+   ],
+   "change": "-",
+   "change_text": "anlamlı eğilim yok",
+   "verified": true
+  }
+ ],
+ "who": [
+  {
+   "indicator": "AMR_INFECT_ECOLI",
+   "pathogen": "E. coli",
+   "antibiotic": "3. kuşak sefalosporinler",
+   "year": 2021,
+   "r_pct": 53.77,
+   "members": [
+    {
+     "antibiotic": "sefotaksim",
+     "r": 371,
+     "n": 690,
+     "r_pct": 53.77
+    },
+    {
+     "antibiotic": "seftriakson",
+     "r": 1927,
+     "n": 4085,
+     "r_pct": 47.17
+    },
+    {
+     "antibiotic": "seftazidim",
+     "r": 2090,
+     "n": 4790,
+     "r_pct": 43.63
+    }
+   ],
+   "basis": "sefotaksim",
+   "basis_is_highest": true,
+   "class_level": {
+    "antibiotic": "Third-generation cephalosporins",
+    "r": 2434,
+    "n": 4849,
+    "r_pct": 50.2
+   },
+   "class_same_as": null
+  },
+  {
+   "indicator": "AMR_INFECT_ECOLI",
+   "pathogen": "E. coli",
+   "antibiotic": "3. kuşak sefalosporinler",
+   "year": 2022,
+   "r_pct": 52.18,
+   "members": [
+    {
+     "antibiotic": "sefotaksim",
+     "r": 251,
+     "n": 481,
+     "r_pct": 52.18
+    },
+    {
+     "antibiotic": "seftriakson",
+     "r": 2200,
+     "n": 4261,
+     "r_pct": 51.63
+    },
+    {
+     "antibiotic": "seftazidim",
+     "r": 2133,
+     "n": 4714,
+     "r_pct": 45.25
+    }
+   ],
+   "basis": "sefotaksim",
+   "basis_is_highest": true,
+   "class_level": {
+    "antibiotic": "Third-generation cephalosporins",
+    "r": 2133,
+    "n": 4714,
+    "r_pct": 45.25
+   },
+   "class_same_as": "seftazidim"
+  },
+  {
+   "indicator": "AMR_INFECT_ECOLI",
+   "pathogen": "E. coli",
+   "antibiotic": "3. kuşak sefalosporinler",
+   "year": 2023,
+   "r_pct": 56.42,
+   "members": [
+    {
+     "antibiotic": "sefotaksim",
+     "r": 160,
+     "n": 293,
+     "r_pct": 54.61
+    },
+    {
+     "antibiotic": "seftriakson",
+     "r": 3113,
+     "n": 5518,
+     "r_pct": 56.42
+    },
+    {
+     "antibiotic": "seftazidim",
+     "r": 3097,
+     "n": 5956,
+     "r_pct": 52.0
+    }
+   ],
+   "basis": "seftriakson",
+   "basis_is_highest": true,
+   "class_level": {
+    "antibiotic": "Third-generation cephalosporins",
+    "r": 3528,
+    "n": 5992,
+    "r_pct": 58.88
+   },
+   "class_same_as": null
+  },
+  {
+   "indicator": "AMR_INFECT_MRSA",
+   "pathogen": "S. aureus",
+   "antibiotic": "MRSA",
+   "year": 2021,
+   "r_pct": 30.99,
+   "members": [
+    {
+     "antibiotic": "oksasilin",
+     "r": 877,
+     "n": 2830,
+     "r_pct": 30.99
+    },
+    {
+     "antibiotic": "sefoksitin",
+     "r": 229,
+     "n": 789,
+     "r_pct": 29.02
+    }
+   ],
+   "basis": "oksasilin",
+   "basis_is_highest": true,
+   "class_level": {
+    "antibiotic": "Methicillin",
+    "r": 1093,
+    "n": 3559,
+    "r_pct": 30.71
+   },
+   "class_same_as": null
+  },
+  {
+   "indicator": "AMR_INFECT_MRSA",
+   "pathogen": "S. aureus",
+   "antibiotic": "MRSA",
+   "year": 2022,
+   "r_pct": 31.35,
+   "members": [
+    {
+     "antibiotic": "oksasilin",
+     "r": 875,
+     "n": 2791,
+     "r_pct": 31.35
+    },
+    {
+     "antibiotic": "sefoksitin",
+     "r": 455,
+     "n": 1493,
+     "r_pct": 30.48
+    }
+   ],
+   "basis": "oksasilin",
+   "basis_is_highest": true,
+   "class_level": {
+    "antibiotic": "Methicillin",
+    "r": 875,
+    "n": 2791,
+    "r_pct": 31.35
+   },
+   "class_same_as": "oksasilin"
+  },
+  {
+   "indicator": "AMR_INFECT_MRSA",
+   "pathogen": "S. aureus",
+   "antibiotic": "MRSA",
+   "year": 2023,
+   "r_pct": 32.58,
+   "members": [
+    {
+     "antibiotic": "oksasilin",
+     "r": 1087,
+     "n": 3523,
+     "r_pct": 30.85
+    },
+    {
+     "antibiotic": "sefoksitin",
+     "r": 402,
+     "n": 1234,
+     "r_pct": 32.58
+    }
+   ],
+   "basis": "sefoksitin",
+   "basis_is_highest": true,
+   "class_level": {
+    "antibiotic": "Methicillin",
+    "r": 1294,
+    "n": 4173,
+    "r_pct": 31.01
+   },
+   "class_same_as": null
+  }
+ ]
+}

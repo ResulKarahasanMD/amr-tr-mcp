@@ -1,0 +1,16 @@
+{
+  "name": "amr-tr-mcp",
+  "version": "0.1.0",
+  "description": "Türkiye antimikrobiyal direnç sürveyans verisi (UAMDS/HSGM + WHO GHO) için çevrimdışı, salt-okur MCP sunucusu",
+  "type": "module",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "node test.mjs",
+    "extract": "uv run --with pypdf python extract/uamds_extract.py"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "zod": "^4.6.5"
+  }
+}
