@@ -1,5 +1,8 @@
 # amr-tr-mcp
 
+> **English summary.** An offline, read-only MCP server for Türkiye's national antimicrobial resistance surveillance data: the UAMDS network annual report (HSGM, 2024 data) plus WHO GHO SDG 3.d.2. Blood and CSF isolates only, national totals.
+> The rest of this README is in Turkish.
+
 Türkiye ulusal antimikrobiyal direnç sürveyans verisi için çevrimdışı, salt-okur MCP sunucusu.
 
 ## Veri
@@ -57,3 +60,7 @@ haliyle kalır.
 Başlık: `pathogen, antibiotic, n, r_pct` zorunlu; `source, year, specimen, setting` isteğe bağlı.
 Ayırıcı virgül ya da noktalı virgül, ondalık virgül kabul edilir. Geçersiz satırlar atlanır ve
 `amr_tr_status` çıktısında satır numarasıyla listelenir. n < 30 olan satırlar uyarıyla gösterilir.
+
+## Lisans ve veri
+
+Kod [MIT](LICENSE) lisanslıdır. `data/uamds.json`, yukarıdaki tabloda adı geçen kamuya açık kaynaklardan (HSGM UAMDS Ağı Yıllık Raporu ve WHO GHO) `extract/uamds_extract.py` ile türetilmiştir; verinin sahibi ve sorumlusu kaynak kurumlardır.
