@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * Çevrimdışı test: sunucuyu stdio üzerinden kaldırır, araçları gerçek data/uamds.json ile dener.
- * Beklenen sayılar raporun PDF metninden, çıkarıcıdan (pypdf) bağımsız bir okuyucuyla alındı;
- * K. pneumoniae satırları yalnız raporun kendi iki tablosu arasında çapraz doğrulandı.
+ * Offline test: starts the server over stdio and exercises the tools against the real data/uamds.json.
+ * The expected numbers were taken from the report's PDF text with a reader independent of the extractor (pypdf);
+ * the K. pneumoniae rows were cross-checked only between the report's own two tables.
  *
- *   node test.mjs           # hepsi
- *   node test.mjs yerel     # adında 'yerel' geçen vakalar
+ *   node test.mjs           # all of them
+ *   node test.mjs yerel     # cases whose name contains 'yerel' (local)
  */
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
@@ -40,7 +40,7 @@ const CASES = [
   ["hata-parametresiz", "amr_tr_resistance", {}, (t, r) => r.isError && /en az biri/.test(t)],
 ];
 
-// Sentetik yerel antibiyogram: gerçek bir kuruma ait DEĞİL, yalnız CSV yolunu sınar.
+// Synthetic local antibiogram: it does NOT belong to a real institution; it only exercises the CSV code path.
 const LOCAL_CSV = [
   "source;year;specimen;setting;pathogen;antibiotic;n;r_pct",
   "SENTETIK-TEST;2025;idrar;poliklinik;E. coli;Siprofloksasin;412;38,5",

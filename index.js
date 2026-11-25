@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Türkiye antimikrobiyal direnç sürveyans verisi (UAMDS / HSGM) için MCP sunucusu.
-// Çevrimdışı ve salt-okur: sayılar extract/uamds_extract.py'nin ürettiği data/uamds.json'dan gelir.
-// AMR_TR_LOCAL bir CSV gösteriyorsa kurumun kendi antibiyogramı da yüklenir.
+// MCP server for Türkiye's antimicrobial resistance surveillance data (UAMDS / HSGM).
+// Offline and read-only: the numbers come from data/uamds.json, which extract/uamds_extract.py generates.
+// If AMR_TR_LOCAL points to a CSV, the institution's own antibiogram is loaded as well.
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -18,7 +18,7 @@ const LOCAL = loadLocal(process.env.AMR_TR_LOCAL);
 const READ_ONLY = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false };
 const text = (s) => ({ content: [{ type: "text", text: s }] });
 
-// Hata protokol hatası değil, modele yol gösteren araç hatası olarak dönmeli.
+// An error should come back as a tool error that guides the model, not as a protocol error.
 const safe = (fn) => async (args) => {
   try { return text(await fn(args)); }
   catch (e) { return { isError: true, content: [{ type: "text", text: `Hata: ${e.message}` }] }; }
@@ -89,7 +89,7 @@ server.registerTool(
 const transport = new StdioServerTransport();
 await server.connect(transport);
 
-// stdio sunucusu istemciye bağımlıdır; istemci gidince süreç de gitmeli.
+// A stdio server depends on its client; when the client goes away, the process should exit too.
 const bye = (code) => process.exit(code);
 process.stdin.on("end", () => bye(0));
 process.stdin.on("close", () => bye(0));

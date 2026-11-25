@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""UAMDS yıllık raporundan (HSGM) direnç tablolarını çıkarır ve data/uamds.json yazar.
+"""Extracts the resistance tables from the UAMDS annual report (HSGM) and writes data/uamds.json.
 
-    uv run --with pypdf python extract/uamds_extract.py              # rapor URL'den, bellekte
-    uv run --with pypdf python extract/uamds_extract.py --pdf x.pdf   # yerel kopyadan
+    uv run --with pypdf python extract/uamds_extract.py              # report from the URL, in memory
+    uv run --with pypdf python extract/uamds_extract.py --pdf x.pdf   # from a local copy
 
-PDF diske yazılmaz; sha256'sı çıktıya kaydedilir. Hiçbir sayı elle girilmez:
-- Sütun düzeni her tablonun kendi başlık satırından okunur (Sayı / R / I / IR).
-- 5 yıllık özet tablosundaki satırların bakterisi, son yıl sütunu tek tek tablolarla
-  eşleştirilerek bulunur; bu aynı zamanda iki tablonun birbirini doğrulamasıdır.
-Uyuşmazlık ya da çözülemeyen satır varsa dosya yazılmaz, çıkış kodu 1.
+The PDF is not written to disk; its sha256 is recorded in the output. No number is entered by hand:
+- The column layout is read from each table's own header row (`Sayı` [count] / R / I / IR).
+- The pathogen of each row in the five-year summary table is found by matching the final-year
+  column against the per-pathogen tables; this is also how the two tables verify each other.
+If there is a mismatch or a row that cannot be resolved, no file is written and the exit code is 1.
 """
 import argparse
 import datetime
@@ -31,8 +31,8 @@ GHO_CODES = {
     "AMR_INFECT_ECOLI": ("E. coli", "3. kuşak sefalosporinler"),
     "AMR_INFECT_MRSA": ("S. aureus", "MRSA"),
 }
-# WHO veri portalının (data.who.int/dashboards/amr) arkasındaki açık OData ucu; Türkiye M49 kodu 792.
-# Aynı tabloda 2024 satırları 2023'ün birebir kopyası (2026-09-27); yalnız GHO'da karşılığı olan yıllar kullanılır.
+# The open OData endpoint behind the WHO data portal (data.who.int/dashboards/amr); Türkiye's M49 code is 792.
+# In the same table the 2024 rows are an exact copy of the 2023 rows (2026-09-27); only years that have a counterpart in GHO are used.
 GLASS_URL = (
     "https://xmart-api-public.who.int/DATA_/RELAY_GLASS_AMR_CTA?$filter="
     "DIM_GEO_CODE_M49%20eq%20%27792%27"
@@ -44,7 +44,7 @@ GLASS = {
                          {"Cefotaxime": "sefotaksim", "Ceftriaxone": "seftriakson", "Ceftazidime": "seftazidim"}),
     "AMR_INFECT_MRSA": ("Staphylococcus aureus", "Methicillin", {"Oxacillin": "oksasilin", "Cefoxitin": "sefoksitin"}),
 }
-# hsgm.saglik.gov.tr, User-Agent'ında "extract" geçen isteklere 403 dönüyor (2026-09-27'de denendi).
+# hsgm.saglik.gov.tr returns 403 to requests whose User-Agent contains "extract" (tried on 2026-09-27).
 UA = {"User-Agent": "amr-tr-mcp/0.1 (+UAMDS rapor okuyucu)"}
 
 FOLD = str.maketrans("İIıŞşĞğÜüÖöÇç", "iiissgguuoocc")
@@ -77,7 +77,7 @@ def cell(tok):
 
 
 def parse_tables(pages):
-    """Bakteri başına tablolar: [{table, page, year, pathogen, cols, rows, notes}]"""
+    """Per-pathogen tables: [{table, page, year, pathogen, cols, rows, notes}]"""
     tables, cur = [], None
     for pno, txt in enumerate(pages, 1):
         for line in (ln.strip() for ln in txt.splitlines()):
@@ -89,7 +89,7 @@ def parse_tables(pages):
                 cur = dict(table=int(m[1]), page=pno, year=int(m[2]), pathogen=m[3].strip(), cols=None, rows=[], notes=[])
                 tables.append(cur)
                 continue
-            if not cur or not line or line.isdigit():  # yalnız rakam = sayfa numarası
+            if not cur or not line or line.isdigit():  # digits only = page number
                 continue
             if cur["cols"] is None:
                 if "Antibiyotik" in line and "Sayı" in line:
@@ -115,9 +115,9 @@ def parse_notes(notes):
     groups = {}
     for name, members in re.findall(r"([A-ZÇĞİÖŞÜ][^.*]*?) grubu ([^.]*?)(?:den|dan|ten|tan) oluş(?:ur|maktadır)", blob):
         groups[name.strip()] = [x.strip() for x in re.split(r",| ve ", members) if x.strip()]
-    # "3. kuşak" içindeki nokta cümle sonu değil
+    # the period in "3. kuşak" (3rd generation) is not the end of a sentence
     mdr = re.search(r"Çoklu ilaç direnci[;,]\s*(?:[^.]|(?<=\d)\.)*?(?:olmasıdır|tanımlanmıştır)\.", blob)
-    note = re.search(r"(?<!\*)\*(?!\*)\s*(.+?)(?=\s*\*\*|$)", blob)  # tek yıldızlı dipnot
+    note = re.search(r"(?<!\*)\*(?!\*)\s*(.+?)(?=\s*\*\*|$)", blob)  # single-asterisk footnote
     return groups, mdr[0] if mdr else None, note[1].strip() if note else None
 
 
@@ -198,7 +198,7 @@ def parse_scope(pages):
     for n, name, icu in re.findall(
         r"toplam (\d+) ([A-Z][^0-9]{2,30}?) izolatı analizlere dahil edilmiştir\. Bu [^%]{0,40}?izolatlarının ?% ?(\d+)[’'](?:\w+) yoğun bakım", flat
     ):
-        per[fold(name)] = dict(n=int(n), icu_pct=int(icu))  # pypdf "E. fae cium" gibi boşluk ekleyebiliyor
+        per[fold(name)] = dict(n=int(n), icu_pct=int(icu))  # pypdf can insert spaces, as in "E. fae cium"
     scope = dict(
         specimens=["kan", "BOS"], level="ulusal (sentinel)", standard="EUCAST",
         dedup="hasta başına ilk izolat",
@@ -213,7 +213,7 @@ def parse_scope(pages):
 
 
 def fetch_glass_counts():
-    """GLASS'a bildirilen ham sayılar (kan, tüm hastalar): {(yıl, bakteri, antibiyotik): {"r", "n"}}"""
+    """Raw counts reported to GLASS (blood, all patients): {(year, pathogen, antibiotic): {"r", "n"}}"""
     counts, url = {}, GLASS_URL
     while url:
         j = json.loads(fetch(url))
@@ -233,7 +233,7 @@ def fetch_who():
         for r in json.loads(fetch(GHO_URL.format(code=code)))["value"]:
             if r["SpatialDim"] == "TUR" and r.get("NumericValue") is not None:
                 rows.append(dict(indicator=code, pathogen=pathogen, antibiotic=abx, year=r["TimeDim"], r_pct=round(r["NumericValue"], 2)))
-    # GHO değeri hangi sayılardan geliyor? Ham GLASS sayılarıyla eşleştir; eşleşmezse basis boş kalır.
+    # Which counts does the GHO value come from? Match it against the raw GLASS counts; if nothing matches, basis stays empty.
     counts = fetch_glass_counts()
     for w in rows:
         name, cls, members = GLASS[w["indicator"]]
@@ -246,7 +246,7 @@ def fetch_who():
         w["basis"] = next((e["antibiotic"] for e in w["members"] if e["r_pct"] == w["r_pct"]), None)
         w["basis_is_highest"] = bool(w["basis"]) and w["r_pct"] == max(e["r_pct"] for e in w["members"])
         w["class_level"] = c = entry(cls, cls)
-        # Sınıf satırı bir üyeyle aynı sayıları taşıyorsa birleşik ("en az birine dirençli") değer değildir.
+        # If the class row carries the same counts as one member, it is not a combined ("resistant to at least one") value.
         w["class_same_as"] = next((e["antibiotic"] for e in w["members"] if c and (e["r"], e["n"]) == (c["r"], c["n"])), None)
     return sorted(rows, key=lambda r: (r["indicator"], r["year"]))
 
@@ -280,7 +280,7 @@ def main():
     if not a.no_who:
         try:
             who = fetch_who()
-        except Exception as e:  # ağ yoksa rapor verisi yine de yazılır
+        except Exception as e:  # without network access the report data is still written
             who_error = str(e)
 
     print(f"pdf: {len(raw)} bayt, {len(pages)} sayfa, sha256 {hashlib.sha256(raw).hexdigest()[:16]}…")

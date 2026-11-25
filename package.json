@@ -1,7 +1,7 @@
 {
   "name": "amr-tr-mcp",
   "version": "0.1.0",
-  "description": "Türkiye antimikrobiyal direnç sürveyans verisi (UAMDS/HSGM + WHO GHO) için çevrimdışı, salt-okur MCP sunucusu",
+  "description": "Offline, read-only MCP server for Türkiye's antimicrobial resistance surveillance data (UAMDS/HSGM + WHO GHO)",
   "license": "MIT",
   "type": "module",
   "main": "index.js",
