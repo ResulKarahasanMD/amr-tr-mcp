@@ -1,66 +1,72 @@
 # amr-tr-mcp
 
 > **English summary.** An offline, read-only MCP server for Türkiye's national antimicrobial resistance surveillance data: the UAMDS network annual report (HSGM, 2024 data) plus WHO GHO SDG 3.d.2. Blood and CSF isolates only, national totals.
-> The rest of this README is in Turkish.
 
-Türkiye ulusal antimikrobiyal direnç sürveyans verisi için çevrimdışı, salt-okur MCP sunucusu.
+An offline, read-only MCP server for Türkiye's national antimicrobial resistance surveillance data.
 
-## Veri
+## Data
 
-| Kaynak | İçerik | Nasıl alınıyor |
+| Source | Content | How it is obtained |
 |---|---|---|
-| UAMDS Ağı Yıllık Raporu (2024 verileri), HSGM, Ocak 2026 | 8 bakteri, 55 bakteri-antibiyotik satırı (2024) + 26 çift için 2020–2024 eğilimi | `extract/uamds_extract.py` PDF'i bellekte ayrıştırır |
-| WHO GHO (SDG 3.d.2) | E. coli 3. kuşak sefalosporin ve MRSA, Türkiye 2021–2023 | aynı betik, OData API |
-| Yerel antibiyogram (isteğe bağlı) | Kurumun kendi verisi | `AMR_TR_LOCAL=/yol/antibiyogram.csv` |
+| UAMDS network annual report (UAMDS Ağı Yıllık Raporu; 2024 data), HSGM, January 2026 | 8 pathogens, 55 pathogen-antibiotic rows (2024) + the 2020–2024 trend for 26 pairs | `extract/uamds_extract.py` parses the PDF in memory |
+| WHO GHO (SDG 3.d.2) | E. coli (third-generation cephalosporins) and MRSA, Türkiye 2021–2023 | same script, OData API |
+| Local antibiogram (optional) | The institution's own data | `AMR_TR_LOCAL=/yol/antibiyogram.csv` |
 
-Hiçbir sayı elle girilmedi. Çıkarıcı, 5 yıllık özet tablosunun son yıl sütununu tek tek bakteri
-tablolarıyla eşleştirir; uyuşmazlıkta dosya yazmaz. 26 eğilim satırının 25'i bu şekilde doğrulandı.
-Doğrulanamayan tek satır P. aeruginosa / Karbapenemler: 2024 tablosunda grup satırı yok, yalnız
-imipenem ve meropenem ayrı ayrı var.
+No number was entered by hand. The extractor matches the final-year column of the five-year
+summary table against the per-pathogen tables; on a mismatch it writes no file. 25 of the 26 trend
+rows were verified this way. The only row that could not be verified is P. aeruginosa /
+`Karbapenemler` (carbapenems): the 2024 table has no group row, only imipenem and meropenem
+separately.
 
-## Sınırlar
+## Limitations
 
-- Yalnız **kan ve BOS** izolatları. İdrar, solunum, yara örneği yok.
-- **Ulusal toplam**: bölge, il ya da hastane kırılımı yok. İzolatların %49,6'sı yoğun bakımdan.
-- Toplum kökenli enfeksiyonlar için ampirik seçimde bu oranlar direnci olduğundan yüksek gösterir.
-- "Yerel" direnç için kurumun kendi antibiyogramı gerekir; kamuya açık bir kaynağı yok.
-- WHO GHO ile UAMDS raporu aynı yıl için farklı değer veriyor (2023 E. coli: %56,42 ve %59).
-  Neden hesap kuralı, veri aynı: WHO değeri sınıfın tek bir antibiyotiğinin yüzdesi (2023'te
-  seftriakson, 3113/5518), UAMDS değeri sınıf düzeyi (GLASS'ta 3528/5992 = %58,88). Türkiye için
-  6 yıl-gösterge çiftinin 6'sında WHO değeri, direnç yüzdesi en yüksek üyeninkiyle iki ondalığa
-  kadar eşleşti (GLASS ham sayıları: `xmart-api-public.who.int/DATA_/RELAY_GLASS_AMR_CTA`).
-  WHO'nun bu kuralı yazdığı bir belge bulunamadı; kural sayılardan çıkarıldı.
-- GLASS'ın 2022 sınıf satırları tek bir üyeyle aynı sayıları taşıyor (E. coli: seftazidim, MRSA:
-  oksasilin); birleşik değer değil. Nedeni bilinmiyor. Aynı tabloda 2024 satırları 2023'ün kopyası.
+- **Blood and CSF** isolates only. No urine, respiratory or wound specimens.
+- **National totals**: no breakdown by region, province or hospital. 49.6% of the isolates are
+  from intensive care.
+- When choosing empirical therapy for community-acquired infections, these rates
+  overstate resistance.
+- "Local" resistance requires the institution's own antibiogram; there is no publicly available
+  source for it.
+- WHO GHO and the UAMDS report give different values for the same year (2023 E. coli: 56.42% and
+  59%). The reason is the calculation rule; the data are the same: the WHO value is the percentage
+  for a single antibiotic in the class (ceftriaxone in 2023, 3113/5518), whereas the UAMDS value is
+  class-level (in GLASS 3528/5992 = 58.88%). For Türkiye, in 6 of 6 year-indicator pairs the WHO
+  value matched, to two decimal places, that of the member with the highest resistance percentage
+  (raw GLASS counts: `xmart-api-public.who.int/DATA_/RELAY_GLASS_AMR_CTA`). No WHO document stating
+  this rule was found; the rule was inferred from the numbers.
+- The 2022 class rows in GLASS carry the same counts as a single member (E. coli: ceftazidime,
+  MRSA: oxacillin); not a combined value. The reason is unknown. In the same table the 2024 rows
+  are a copy of the 2023 rows.
 
-## Araçlar
+## Tools
 
-- `amr_tr_status` — kaynak, kapsam, izlenen bakteriler, yerel CSV durumu
-- `amr_tr_resistance` — bakteri ve/veya antibiyotik için R %, I %, n, eğilim, kaynak sayfası
-- `amr_tr_trend` — 2020–2024 serisi ve raporun eğilim değerlendirmesi
+- `amr_tr_status` — source, scope, tracked pathogens, local CSV status
+- `amr_tr_resistance` — R %, I %, n, trend and source page for a pathogen and/or an antibiotic
+- `amr_tr_trend` — the 2020–2024 series and the report's trend assessment
 
-## Çalıştırma
+## Running
 
 ```bash
 npm install
 npm test
 ```
 
-Veriyi yenilemek (yeni yıl raporu çıkınca `--url` ile):
+To refresh the data (with `--url` once a new year's report is out):
 
 ```bash
 npm run extract
 ```
 
-Rapor düzeni değişirse çıkarıcı sorunları listeler ve çıkış kodu 1 verir; `data/uamds.json` eski
-haliyle kalır.
+If the report layout changes, the extractor lists the problems and exits with code 1;
+`data/uamds.json` stays as it was.
 
-## Yerel antibiyogram CSV'si
+## Local antibiogram CSV
 
-Başlık: `pathogen, antibiotic, n, r_pct` zorunlu; `source, year, specimen, setting` isteğe bağlı.
-Ayırıcı virgül ya da noktalı virgül, ondalık virgül kabul edilir. Geçersiz satırlar atlanır ve
-`amr_tr_status` çıktısında satır numarasıyla listelenir. n < 30 olan satırlar uyarıyla gösterilir.
+Header: `pathogen, antibiotic, n, r_pct` are required; `source, year, specimen, setting` are
+optional. The delimiter is a comma or a semicolon, and a decimal comma is accepted. Invalid rows
+are skipped and listed with their row number in the `amr_tr_status` output. Rows with n < 30 are
+shown with a warning.
 
-## Lisans ve veri
+## License and data
 
-Kod [MIT](LICENSE) lisanslıdır. `data/uamds.json`, yukarıdaki tabloda adı geçen kamuya açık kaynaklardan (HSGM UAMDS Ağı Yıllık Raporu ve WHO GHO) `extract/uamds_extract.py` ile türetilmiştir; verinin sahibi ve sorumlusu kaynak kurumlardır.
+The code is licensed under [MIT](LICENSE). `data/uamds.json` was derived with `extract/uamds_extract.py` from the publicly available sources named in the table above (the HSGM UAMDS network annual report and WHO GHO); the source institutions own the data and are responsible for it.
