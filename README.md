@@ -1,8 +1,6 @@
 # amr-tr-mcp
 
-> **English summary.** An offline, read-only MCP server for Türkiye's national antimicrobial resistance surveillance data: the UAMDS network annual report (HSGM, 2024 data) plus WHO GHO SDG 3.d.2. Blood and CSF isolates only, national totals.
-
-An offline, read-only MCP server for Türkiye's national antimicrobial resistance surveillance data.
+An offline, read-only MCP server for Türkiye's national antimicrobial resistance surveillance data: the UAMDS network annual report (HSGM, 2024 data) plus WHO GHO SDG 3.d.2. Blood and CSF isolates only, national totals.
 
 ## Data
 
