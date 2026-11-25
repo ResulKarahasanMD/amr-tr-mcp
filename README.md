@@ -8,7 +8,7 @@ An offline, read-only MCP server for Türkiye's national antimicrobial resistanc
 |---|---|---|
 | UAMDS network annual report (UAMDS Ağı Yıllık Raporu; 2024 data), HSGM, January 2026 | 8 pathogens, 55 pathogen-antibiotic rows (2024) + the 2020–2024 trend for 26 pairs | `extract/uamds_extract.py` parses the PDF in memory |
 | WHO GHO (SDG 3.d.2) | E. coli (third-generation cephalosporins) and MRSA, Türkiye 2021–2023 | same script, OData API |
-| Local antibiogram (optional) | The institution's own data | `AMR_TR_LOCAL=/yol/antibiyogram.csv` |
+| Local antibiogram (optional) | The institution's own data | `AMR_TR_LOCAL=/path/to/antibiogram.csv` |
 
 No number was entered by hand. The extractor matches the final-year column of the five-year
 summary table against the per-pathogen tables; on a mismatch it writes no file. 25 of the 26 trend
